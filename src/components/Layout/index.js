@@ -3,15 +3,15 @@ import "./style.scss";
 
 // Component Imports
 import Header from "../Header";
+import Main from "../Main";
 
 const Layout = () => {
-  const [count, setCount] = useState(0);
+  // const [count, setCount] = useState(0);
 
   return (
     <div>
-      {count}
-      <Header></Header>
-      <button onClick={() => setCount(count + 1)}>Click Me</button>
+      <Header />
+      <Main />
     </div>
   );
 };
