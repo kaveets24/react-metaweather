@@ -1,0 +1,17 @@
+@import "../../css/styleguide.scss";
+* {
+    box-sizing: border-box;
+    font-family: $fontMain;
+}
+html, body {
+    background: $background;
+    height: 100%;   
+
+
+}
+body {
+    color: $fontWhite;
+    
+    
+    
+}

@@ -1,0 +1,41 @@
+// Colors
+$fontBlack: hsl(0, 0%, 10%);
+$fontWhite: #FFFFFF;
+$background: linear-gradient(180deg, #2C5364 0%, #203A43 50%, #0F2027 100%);
+$secondaryOpacity: hsla(0, 0%, 100%, 0.7);
+
+// Font Sizes
+$fontSmall: 12px;
+$fontMedium: 18px;
+$fontLarge: 20px;
+$fontXL: 28px;
+$fontXXL: 36px;
+$fontXXXL: 72px;
+
+// Font Styles
+@font-face {
+    font-family: "DM Sans";
+    src: url("../fonts/DMSans-Regular.ttf");
+  }
+  @font-face {
+      font-family: "DM Sans-Bold" ;
+      src: url("../fonts/DMSans-Bold.ttf");
+  }
+$fontMain: DM Sans, helvetica   ;
+
+// Breakpoints
+$mobileBreakpointMin: 320px;
+$mobileBreakpointMax: 767px;
+$tabletBreakpointMin: 768px;
+$tabletBreakpointMax: 1023px;
+$desktopBreakpointMin: 1024px;
+
+// Misc. Styles
+$formPadding: 10px;
+$layoutPadding: 120px;
+$textShadow: 0 2px 15px hsla(0, 0%, 0%, 0.2);
+$border: 1px solid $fontWhite;
+$headerHeight: 66px;
+
+// Animations
+$hoverTransitionDuration: 0.4s;
