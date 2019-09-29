@@ -3,7 +3,6 @@ import React from "react";
 import "./style.scss";
 
 const convertTemp = temp => {
-  console.log(temp);
   return Math.round(temp * (9 / 5) + 32);
 };
 
