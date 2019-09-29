@@ -4,8 +4,6 @@ var app = express();
 const axios = require("axios");
 const path = require('path');
 
-require("dotenv").config({ path: "../.env" });
-
 app.use(cors());
 app.get("/", async function(req, res, next) {
   res.json({ msg: "This is CORS-enabled for all origins!" });
