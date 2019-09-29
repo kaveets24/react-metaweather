@@ -12,7 +12,12 @@
     "install": "npm install --prefix server && npm install --prefix client",
     "server": "npm run server --prefix server",
     "client": "npm run start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "build": "npm run build --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm run build"
+
+    
+
   },
   "author": "",
   "license": "ISC",

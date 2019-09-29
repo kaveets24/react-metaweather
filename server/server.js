@@ -29,7 +29,16 @@ app.get("/api/location/:woed", async (req, res) => {
   }
 });
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, "client/build")));
+
+  const path = require('path');
+  app.get("*", (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+  })
+}
 let port = 8000;
+
 app.listen(port, function() {
   console.log(`Server listening on port ${port}`);
 });
