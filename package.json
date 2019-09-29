@@ -14,7 +14,10 @@
     "server": "npm run server --prefix server",
     "client": "npm run start --prefix client",
     "build": "npm run build --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""    
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install client && npm rebuild node-sass --prefix client && npm run build"
+
+    
 
   },
   "author": "",
