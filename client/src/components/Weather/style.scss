@@ -1,10 +1,16 @@
 @import "../../css/styleguide.scss";
 
 .results-container {
+
+  @media screen and (max-width: $tabletBreakpointMax) {
+    width: 100%;
+    
+  }
   .loading {
+    max-width: 100px;
+    margin: 150px auto 0;
     @include loader;
 
-    margin-top: 150px;
     &--hidden {
       display: none;
     }
