@@ -1,11 +1,5 @@
 @import "../../css/styleguide.scss";
 
-.results-container {
-
-  @media screen and (max-width: $tabletBreakpointMax) {
-    width: 100%;
-    
-  }
   .loading {
     max-width: 2000px;
     margin: 150px auto 0;
@@ -26,20 +20,25 @@
 
   .weather {
     @include fadeIn;
+    margin-bottom: 50px;
 
     &--hidden {
       display: none;
     }
 
     img {
-      opacity: 0.9;
+      opacity: 0.6;
+      height: 40%;
+      @media screen and (max-width: $mobileBreakpointMax) {
+        height: 30%;
+      }
     }
     table {
-      margin: 0 auto;
-      border-collapse: collapse;
+      border-collapse: collapse;  
       border: $border;
-      width: 100%;
       text-align: center;
+      table-layout: fixed;
+      width: 100%;
      
 
       
@@ -56,11 +55,15 @@
         border-bottom: 0.5px solid $fontBlack;
         padding: 20px 20px;
         color: $fontBlack;
-        overflow: auto;
           
         @media screen and (max-width: $mobileBreakpointMax) {
           font-size: $fontMedium;
-          padding: 30px 5px;
+          padding: 10px 0;
+        }
+
+        @media screen and (max-width: $mobileBreakpointMin) {
+          font-size: $fontSmall;
+           
         }
       }
       td {
@@ -69,4 +72,3 @@
 
     }
   }
-}
