@@ -3,6 +3,7 @@ import React from "react";
 import "./style.scss";
 
 const convertTemp = temp => {
+  console.log(temp);
   return Math.round(temp * (9 / 5) + 32);
 };
 
@@ -13,7 +14,7 @@ const Weather = props => {
   if (props.weather && props.weather.length) {
     weatherClassName = "weather";
 
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; 
     let tableRows = props.weather.map(weather => {
       // Return day as a string instead of an int.
       let day = new Date(weather.applicable_date);
