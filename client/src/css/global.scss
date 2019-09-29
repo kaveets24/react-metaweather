@@ -5,20 +5,18 @@
   color: $fontBlack;
 }
 
+html {
+  min-height: 100%;
 
-html,
+
+}
 body {
   height: 100%;
-  width: 100%;
-  background: #2c5364;
-  
-
-  
+  background: $background;
+  background-repeat: no-repeat;
 }
-
-
 
 #root,
 .App {
-  height: inherit;
+  height: auto;
 }
