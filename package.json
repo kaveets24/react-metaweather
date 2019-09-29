@@ -13,9 +13,7 @@
     "server": "npm run server --prefix server",
     "client": "npm run start --prefix client",
     "build": "npm run build --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-
-    
+    "dev": "concurrently \"npm run server\" \"npm run client\""    
 
   },
   "author": "",
