@@ -28,9 +28,10 @@
 
     img {
       opacity: 0.6;
-      height: 40%;
+      height: 50px;
       @media screen and (max-width: $mobileBreakpointMax) {
-        height: 30%;
+        height: 20px;
+        
       }
     }
     table {
@@ -55,13 +56,9 @@
         border-bottom: 0.5px solid $fontBlack;
         padding: 20px 20px;
         color: $fontBlack;
-          
+        
         @media screen and (max-width: $mobileBreakpointMax) {
-          font-size: $fontMedium;
           padding: 10px 0;
-        }
-
-        @media screen and (max-width: $mobileBreakpointMin) {
           font-size: $fontSmall;
            
         }
