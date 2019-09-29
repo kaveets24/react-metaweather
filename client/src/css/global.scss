@@ -1,0 +1,24 @@
+@import "../css/styleguide.scss";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  color: $fontBlack;
+}
+
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #2c5364;
+  
+
+  
+}
+
+
+
+#root,
+.App {
+  height: inherit;
+}

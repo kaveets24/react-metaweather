@@ -1,3 +1,19 @@
-main {
-    display: flex;
+@import "../../css/styleguide.scss";    
+
+
+.main {
+  display: flex;
+  height: inherit;
+  align-items: center;  
+  max-width: $desktopBreakpointMin;
+  margin: 100px auto 0 auto;
+  flex-direction: column;
+  @include fadeIn;
+
+
+  @media screen and (max-width: $desktopBreakpointMin) {
+    margin: 100px 0 0 0;
+    padding: 0 30px;
+    
+  }
 }

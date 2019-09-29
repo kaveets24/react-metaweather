@@ -1,12 +1,20 @@
-import React, { useState, useEffect } from "react";
-import "./style.scss";
+import React from "react";
 
+// css
+import "./style.scss";
+import "../../css/normalize.css";
+import "../../css/global.scss";
+
+
+
+// MetaWeather api
 import { MetaWeather } from "../../api/metaweather";
 
 // Component Imports
-import Header from "../Header";
+// import Header from "../Header";
 import Main from "../Main";
 import useForm from "../../hooks";
+
 
 const Layout = () => {
   const {
@@ -17,11 +25,9 @@ const Layout = () => {
     location
   } = useForm(MetaWeather.getLocation);
 
-  useEffect(() => console.log("Weather: ", weather));
-
   return (
-    <div>
-      <Header />
+    <div className="layout">
+      {/* <Header /> */}
       <Main
         inputs={inputs}
         handleInputChange={handleInputChange}

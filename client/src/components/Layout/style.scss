@@ -1,17 +1,13 @@
 @import "../../css/styleguide.scss";
-* {
-    box-sizing: border-box;
-    font-family: $fontMain;
-}
-html, body {
+
+
+
+.layout {
+    color: $fontBlack;
     background: $background;
-    height: 100%;   
-
-
-}
-body {
-    color: $fontWhite;
-    
-    
+    font-family: $fontMain;
+    font-size: $fontLarge;
+    height: inherit;
     
 }
+

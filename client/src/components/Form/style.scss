@@ -1,0 +1,75 @@
+@import "../../css/styleguide.scss";
+form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: center;
+    font-size: $fontXXL; 
+    width: 100%;
+ 
+
+    & > * {
+        border: none;
+        
+        outline: none;
+        height: 64px;
+        margin: 20px 0 0 0;
+    }
+
+    input {
+        margin: 0;
+        padding: $formPadding;
+        width: inherit;
+        background: transparent;
+        border: $border;   
+        border-radius: 0;
+
+
+
+       
+
+    }
+
+    ::placeholder {
+        color: inherit;
+    }
+
+    button {
+        border: $border;
+        background-color: inherit;
+        text-transform: uppercase;
+        margin: 0 0 0 30px;
+        width: 70px;
+
+        padding: 0;
+        font-size: $fontLarge;
+        transition-duration: $hoverTransitionDuration;
+
+        &:hover {
+            color: $secondaryOpacity;
+            border-color: $secondaryOpacity;
+           
+        }
+    }
+
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover, 
+    input:-webkit-autofill:focus,
+    input:-internal-autofill-selected,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+      -webkit-text-fill-color: $fontBlack;
+      transition: background-color 5000s ease-in-out 0s;
+    }
+
+
+    @media screen and (max-width: $tabletBreakpointMin) {
+        font-size: $fontMedium;  
+
+    }
+}

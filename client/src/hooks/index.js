@@ -11,6 +11,7 @@ const useForm = (callback) => {
         if (e) {
             e.preventDefault();
         }
+        setWeather({loading: true});
         const res = await callback(inputs.location);
         setWeather(res);
         setLocation(inputs.location);

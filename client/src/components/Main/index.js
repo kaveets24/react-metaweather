@@ -1,20 +1,26 @@
 import React from "react";
+// css
+import "./style.scss";
 
 // Components Import
 import Form from "../Form";
-import Table from "../Table";
+import Weather from "../Weather";
+
+
+
+
 
 const Main = props => {
   return (
-    <main>
+    <div className="main">
       <Form
         inputs={props.inputs}
         handleInputChange={props.handleInputChange}
         handleSubmit={props.handleSubmit}
         weather={props.weather}
       />
-      <Table location={props.location} weather={props.weather}></Table>
-    </main>
+      <Weather location={props.location} weather={props.weather}></Weather>
+    </div>
   );
 };
 

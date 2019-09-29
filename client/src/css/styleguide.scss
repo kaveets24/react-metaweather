@@ -1,8 +1,8 @@
 // Colors
 $fontBlack: hsl(0, 0%, 10%);
-$fontWhite: #FFFFFF;
-$background: linear-gradient(180deg, #2C5364 0%, #203A43 50%, #0F2027 100%);
-$secondaryOpacity: hsla(0, 0%, 100%, 0.7);
+$fontWhite: #ffffff;
+$background: linear-gradient(180deg, #2c5364 0%, #203a43 50%, #0f2027 100%);
+$secondaryOpacity: hsla(0, 0%, 75%, 0.7);
 
 // Font Sizes
 $fontSmall: 12px;
@@ -14,14 +14,15 @@ $fontXXXL: 72px;
 
 // Font Styles
 @font-face {
-    font-family: "DM Sans";
-    src: url("../fonts/DMSans-Regular.ttf");
-  }
-  @font-face {
-      font-family: "DM Sans-Bold" ;
-      src: url("../fonts/DMSans-Bold.ttf");
-  }
-$fontMain: DM Sans, helvetica   ;
+  font-family: "DM Sans";
+  src: url("../fonts/DMSans-Regular.ttf");
+}
+@font-face {
+  font-family: "DM Sans-Bold";
+  src: url("../fonts/DMSans-Bold.ttf");
+}
+$fontMain: DM Sans, helvetica;
+$fontBold: DM Sans-Bold, helvetica;
 
 // Breakpoints
 $mobileBreakpointMin: 320px;
@@ -34,8 +35,50 @@ $desktopBreakpointMin: 1024px;
 $formPadding: 10px;
 $layoutPadding: 120px;
 $textShadow: 0 2px 15px hsla(0, 0%, 0%, 0.2);
-$border: 1px solid $fontWhite;
+$border: 3px solid $fontBlack;
 $headerHeight: 66px;
+
+// Keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    transform: translate(0, 2000px);
+  }
+  to {
+    transform: translate(0, 0);
+  }
+}
+
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
 
 // Animations
 $hoverTransitionDuration: 0.4s;
+@mixin fadeIn {
+  animation: fadeIn 1s;
+}
+@mixin slideFromBottom {
+  animation: slideFromBottom 1s;
+}
+
+@mixin loader {
+  border: 3px solid $fontBlack; /* Light grey */
+  border-top: 3px solid $secondaryOpacity; /* Blue */
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 2s linear infinite, fadeIn 1s;
+}

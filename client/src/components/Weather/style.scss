@@ -1,0 +1,51 @@
+@import "../../css/styleguide.scss";
+
+.results-container {
+  .loading {
+    @include loader;
+
+    margin-top: 150px;
+    &--hidden {
+      display: none;
+    }
+  }
+
+  .weather {
+    @include fadeIn;
+
+    &--hidden {
+      display: none;
+    }
+
+    img {
+      opacity: 0.9;
+    }
+    table {
+     
+      border-collapse: collapse;
+      border: $border;
+      width: 100%;
+      text-align: center;
+
+      
+      
+
+      thead {
+        font-family: $fontBold;
+        border: $border;
+      }
+
+      td,
+      th {
+        border-bottom: 0.5px solid $fontBlack;
+        padding: 20px 20px;
+        color: $fontBlack;
+        @media screen and (max-width: $mobileBreakpointMax) {
+          font-size: $fontSmall;
+          padding: 10px 5px;
+        }
+      }
+
+    }
+  }
+}

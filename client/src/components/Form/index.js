@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./style.scss";
+
 
 const Form = (props) => {
   return (
@@ -10,7 +12,7 @@ const Form = (props) => {
         id="location"
         name="location"
         type="text"
-        placeholder="Enter the name of your city."
+        placeholder="Enter a city name."
         value={props.inputs.location}
       ></input>
       <button type="submit">Go</button>
