@@ -9,6 +9,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js --prefix server",
     "install": "npm install --prefix server && npm install --prefix client",
     "server": "npm run server --prefix server",
     "client": "npm run start --prefix client",
