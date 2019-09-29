@@ -3,6 +3,7 @@ var cors = require("cors");
 var app = express();
 const axios = require("axios");
 const path = require('path');
+const requireHTTPS = require("./middleware/requireHTTPS");
 
 app.use(cors());
 
@@ -27,7 +28,7 @@ app.get("/api/location/:woed", async (req, res) => {
 });
 
 if (process.env.NODE_ENV === 'production') {
-
+  app.use(requireHTTPS); // redirect http requests to https.
   app.use(express.static(path.join(__dirname, "../client/build")));
 
   app.get("*", (req, res) => {
