@@ -62,11 +62,11 @@ const Weather = props => {
             <tr>
               <th style={{ opacity: 0 }}>Icon</th>
               <th>Day</th>
-              <th>Temp (℉)</th>
-              <th>Low (℉)</th>
-              <th>High (℉)</th>
+              <th>Temp<br/>(℉)</th>
+              <th>Low<br/>(℉)</th>
+              <th>High<br/>(℉)</th>
               {/* <th>Humidity (%)</th> */}
-              <th className="wind-speed">Wind (mph)</th>
+              <th className="wind-speed">Wind<br/>(mph)</th>
             </tr>
           </thead>
           {tableBody}
