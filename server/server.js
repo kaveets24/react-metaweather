@@ -5,9 +5,6 @@ const axios = require("axios");
 const path = require('path');
 
 app.use(cors());
-app.get("/", async function(req, res, next) {
-  res.json({ msg: "This is CORS-enabled for all origins!" });
-});
 
 app.get("/api/location/search/:location", async (req, res) => {
   let response = await axios.get(
