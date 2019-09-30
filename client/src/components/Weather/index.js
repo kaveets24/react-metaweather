@@ -31,9 +31,9 @@ const Weather = props => {
             ></img>
           </td>
           <td>{dayString}</td>
-          <td>{currentTemp}</td>
-          <td>{low}</td>
-          <td>{high}</td>
+          <td>{currentTemp}°</td>
+          <td>{low}°</td>
+          <td>{high}°</td>
           {/* <td>{weather.humidity}</td> */}
           <td>{Math.round(weather.wind_speed)}</td>
         </tr>
