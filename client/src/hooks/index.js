@@ -1,20 +1,26 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
-const initializeLocation = () => {
 
-  let favoriteLocation = window.localStorage.getItem("favorite");
-
-  if (favoriteLocation){
-    return favoriteLocation
-  } else {
-    return "";
-  }
-}
 
 const useForm = callback => {
-  const [inputs, setInputs] = useState({ location: initializeLocation()  });
   const [weather, setWeather] = useState([]);
   const [location, setLocation] = useState("");
+
+  const initializeLocation = () => {
+
+
+    const favoriteLocation = window.localStorage.getItem("favorite");
+  
+    if (favoriteLocation){
+      return favoriteLocation
+    } else {
+      return "";
+    }
+  }
+  const [inputs, setInputs] = useState({ location: initializeLocation()  });
+
+
+
 
   
   const getWeatherFromFavorite = () => {

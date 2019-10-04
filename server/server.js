@@ -16,6 +16,7 @@ app.get("/api/location/search/:location", async (req, res) => {
   } catch (e) {
     res.status(404).send();
   }
+  
   if (response.data.length) {
     res.status(200).send(response.data);
   } else {
