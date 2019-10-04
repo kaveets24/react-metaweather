@@ -36,28 +36,11 @@ const Weather = props => {
   if (props.weather && props.weather.length) {
     weatherClassName = "weather";
 
-    // let condition = props.weather[0].weather_state_abbr;
-    
-    // Based on state abbreviaion
-    // let cold = ["t", "hr", "lr", "s"];
-    // let warm = ["hc", "lc", "c"];
-    // let snow = ["sn", "sl", "h"];
-
-    // if (warm.includes(condition)) {
-    //   document.body.className = "warm";
-    // } else if (snow.includes(condition)) {
-    //   document.body.className = "snow";
-    // } else if (cold.includes(condition)) {
-    //   document.body.className = "cold";
-    // }
-
-
     //  Based on temp
     let condition = convertTemp(props.weather[0].the_temp);
-    console.log(condition);
     if (condition < 30) {
       document.body.className = "snow";
-    } else if (condition < 30 || condition < 60) {
+    } else if (condition >= 30 || condition < 60) {
       document.body.className = "cold";
     } else {
       document.body.className = "warm";
