@@ -8,13 +8,14 @@ const requireHTTPS = require("./middleware/requireHTTPS");
 app.use(cors());
 
 app.get("/api/location/search/:location", async (req, res) => {
-  console.log("LOCATION", req.params.location);
-  if (req.params.location !== "") {
-    const response = await axios.get(
+  let response;
+  try {
+    response = await axios.get(
       `https://www.metaweather.com/api/location/search/?query=${req.params.location}`
     );
+  } catch (e) {
+    res.status(404).send();
   }
-
   if (response.data.length) {
     res.status(200).send(response.data);
   } else {
@@ -23,14 +24,20 @@ app.get("/api/location/search/:location", async (req, res) => {
 });
 
 app.get("/api/location/:woed", async (req, res) => {
-  let response = await axios.get(
-    `https://www.metaweather.com/api/location/${req.params.woed}`
-  );
+  let response;
+
+  try {
+    response = await axios.get(
+      `https://www.metaweather.com/api/location/${req.params.woed}`
+    );
+  } catch (e) {
+    res.status(404).send();
+  }
   if (response.data) {
     res.status(200).send(response.data);
   } else {
     res.status(200).send(null);
-  } 
+  }
 });
 
 if (process.env.NODE_ENV === "production") {
@@ -38,6 +45,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join(__dirname, "../client/build")));
 
   app.get("*", (req, res) => {
+    // Could have used absolute imports here.
     res.sendFile(path.resolve(__dirname, "../client", "build", "index.html"));
   });
 }
