@@ -18,6 +18,10 @@
     }
   }
 
+  .select {
+    text-align: center;
+  }
+
   .weather {
     @include fadeIn;
     margin-bottom: 100px;

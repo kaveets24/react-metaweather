@@ -10,7 +10,7 @@ form {
 
     & > * {
         border: none;
-        
+        border-radius: 0;        
         outline: none;
         height: 64px;
         margin: 20px 0 0 0;
@@ -22,11 +22,6 @@ form {
         width: inherit;
         background: transparent;
         border: $border;   
-        border-radius: 0;
-
-
-
-       
 
     }
 
@@ -34,12 +29,14 @@ form {
         color: inherit;
     }
 
+
     button {
         border: $border;
         background-color: inherit;
         text-transform: uppercase;
         margin: 0 0 0 24px;
         width: 70px;
+        break-after: always;
 
         padding: 0;
         font-size: $fontLarge;

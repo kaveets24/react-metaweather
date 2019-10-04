@@ -2,8 +2,7 @@ import React from "react";
 
 import "./style.scss";
 
-
-const Form = (props) => {
+const Form = props => {
   return (
     <form onSubmit={props.handleSubmit}>
       <label htmlFor="location"></label>

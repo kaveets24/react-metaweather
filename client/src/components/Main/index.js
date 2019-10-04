@@ -19,7 +19,7 @@ const Main = props => {
         handleSubmit={props.handleSubmit}
         weather={props.weather}
       />
-      <Weather location={props.location} weather={props.weather}></Weather>
+      <Weather location={props.location} handleSubmit={props.handleSubmit} weather={props.weather}></Weather>
     </div>
   );
 };

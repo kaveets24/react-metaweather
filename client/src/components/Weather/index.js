@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 // css
 import "./style.scss";
 
@@ -12,21 +12,39 @@ const convertTemp = (temp, unit) => {
   
 };
 
+const updateLocalStorage = () => {
+
+}
+
 const Weather = props => {
+  const [tempUnit, setTempUnit] = useState("Units");
+  const [favorite, setFavorite ] = useState();
+
+  const handleClick = (location) => {
+   window.localStorage.setItem("favorite", location );
+   setFavorite(location);
+
+  }
+
   let tableBody;
   let weatherClassName = "weather weather--hidden";
-
+    useEffect((e) => {
+      props.handleSubmit(e);
+      setFavorite(window.localStorage.getItem("favorite"));
+      console.log(window.localStorage); 
+    }, [])
   if (props.weather && props.weather.length) {
     weatherClassName = "weather";
+
 
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]; 
     let tableRows = props.weather.map(weather => {
       // Return day as a string instead of an int.
       let day = new Date(weather.applicable_date);
       let dayString = days[day.getDay()];
-      let low = convertTemp(weather.min_temp);
-      let high = convertTemp(weather.max_temp);
-      let currentTemp = convertTemp(weather.the_temp);
+      let low = tempUnit === "c" ? weather.min_temp : convertTemp(weather.min_temp);
+      let high = tempUnit === "c" ? weather.min_temp : convertTemp(weather.max_temp);
+      let currentTemp = tempUnit === "c" ? weather.min_temp : convertTemp(weather.the_temp);
 
       return (
         <tr key={weather.id}>
@@ -60,6 +78,15 @@ const Weather = props => {
 
   return (
     <div className="results-container">
+      <div className="select">
+        <div onClick={() => handleClick(props.location)} className="addFavorite">Add as favorite</div>
+        <div className="favorite" onClick={props.handleSubmit}>{favorite}</div>
+      <select value={tempUnit} onChange={ e => setTempUnit(e.target.value)} type="radio" name="tempUnit">
+        <option value="Units" disabled>Units</option>
+        <option  value="f">Fahrenheit</option>
+        <option  value="c">Celsius</option>
+      </select>
+      </div>
       <div className={loadingClassName}></div>
       <div className={noResultsClassName}>No Results Found.</div>
       <div className={weatherClassName}>

@@ -23,7 +23,7 @@ const Layout = () => {
     handleInputChange,
     handleSubmit,
     weather,
-    location
+    location, 
   } = useForm(MetaWeather.getLocation);
 
   return (
