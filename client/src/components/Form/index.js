@@ -8,6 +8,7 @@ const Form = (props) => {
     <form onSubmit={props.handleSubmit}>
       <label htmlFor="location"></label>
       <input
+      required
         onChange={props.handleInputChange}
         id="location"
         name="location"
