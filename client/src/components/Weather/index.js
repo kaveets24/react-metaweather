@@ -2,8 +2,14 @@ import React from "react";
 // css
 import "./style.scss";
 
-const convertTemp = temp => {
-  return Math.round(temp * (9 / 5) + 32);
+const convertTemp = (temp, unit) => {
+
+  if (unit === "c") {
+    return Math.round(temp);
+  } else {
+    return Math.round(temp * (9 / 5) + 32);
+  }
+  
 };
 
 const Weather = props => {
