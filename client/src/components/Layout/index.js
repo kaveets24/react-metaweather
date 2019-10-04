@@ -7,8 +7,7 @@ import "../../css/global.scss";
 
 
 
-// MetaWeather api
-import { MetaWeather } from "../../api/metaweather";
+
 
 // Component Imports
 // import Header from "../Header";
@@ -23,7 +22,7 @@ const Layout = () => {
     handleSubmit,
     weather,
     location
-  } = useForm(MetaWeather.getLocation);
+  } = useForm();
 
   return (
     <div className="layout">

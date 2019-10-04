@@ -1,6 +1,9 @@
 import { useState } from "react";
 
-const useForm = (callback) => {
+// MetaWeather api
+import { MetaWeather } from "../api/metaweather";
+
+const useForm = () => {
     const [inputs, setInputs] = useState({location: ""});
     const [weather, setWeather] = useState([]);
     const [location, setLocation ] = useState(null);
@@ -12,7 +15,7 @@ const useForm = (callback) => {
             e.preventDefault();
         }
         setWeather({loading: true});
-        const res = await callback(inputs.location);
+        const res = await MetaWeather.getLocation(inputs.location);
         setWeather(res);
         setLocation(inputs.location);
 
