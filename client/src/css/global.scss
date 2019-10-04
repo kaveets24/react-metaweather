@@ -12,8 +12,21 @@ html {
 }
 body {
   height: 100%;
-  background: $backgroundWarm;
-  background-repeat: no-repeat;
+  background: $background;
+}
+
+.snow {
+background: $backgroundSnow !important;
+
+}
+
+.warm {
+  background: $backgroundWarm !important;
+}
+
+.cold {
+  background: $backgroundCold;
+
 }
 
 #root,

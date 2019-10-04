@@ -1,25 +1,27 @@
 import axios from "axios";
 
 class MetaWeather {
-  constructor() {
-    this.state = {
-      woeid: null,
-      consolidatedWeather: null
-    };
-  }
+  constructor() {}
 
   getLocation = async query => {
     let res;
 
     try {
       res = await axios.get(`/api/location/search/${query}`);
-    } catch (e) {}
-    if (res.data) {
-      this.state.woeid = res.data[0].woeid;
-      let locationRes = await axios.get(`/api/location/${this.state.woeid}`);
-      this.state.consolidatedWeather = locationRes.data.consolidated_weather;
-      return this.state.consolidatedWeather;
+    } catch (e) {
+      return null;
     }
+    let consolidatedWeather;
+
+    if (res.data.length) {
+      let woeid = res.data[0].woeid;
+      let locationRes = await axios.get(`/api/location/${woeid}`);
+      consolidatedWeather = locationRes.data.consolidated_weather;
+      return consolidatedWeather;
+
+    }
+
+
   };
 }
 const MW = new MetaWeather();

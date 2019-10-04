@@ -14,7 +14,7 @@ const convertTemp = (temp, unit) => {
 };
 
 const Weather = props => {
-  const [tempUnit, setTempUnit] = useState("Unit");
+  const [tempUnit, setTempUnit] = useState("f");
   const [favorite, setFavorite] = useState();
   const symbol = tempUnit === "f" || tempUnit === "Unit" ? "°F" : "°C";
 
@@ -35,6 +35,19 @@ const Weather = props => {
 
   if (props.weather && props.weather.length) {
     weatherClassName = "weather";
+
+    let condition = props.weather[0].weather_state_abbr;
+    let cold = ["t", "hr", "lr", "s"];
+    let warm = ["hc", "lc", "c"];
+    let snow = ["sn", "sl", "h"];
+
+    if (warm.includes(condition)) {
+      document.body.className = "warm";
+    } else if (snow.includes(condition)) {
+      document.body.className = "snow";
+    } else if (cold.includes(condition)) {
+      document.body.className = "cold";
+    }
 
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     let tableRows = props.weather.map(weather => {
@@ -94,9 +107,6 @@ const Weather = props => {
           type="radio"
           name="tempUnit"
         >
-          <option value="Unit" disabled>
-            Unit
-          </option>
           <option value="f">Fahrenheit</option>
           <option value="c">Celsius</option>
         </select>

@@ -15,13 +15,9 @@ app.get("/api/location/search/:location", async (req, res) => {
     );
   } catch (e) {
     res.status(404).send();
-  }
-  
-  if (response.data.length) {
-    res.status(200).send(response.data);
-  } else {
-    res.status(200).send(null);
-  }
+  }  
+  res.status(200).send(response.data);
+
 });
 
 app.get("/api/location/:woed", async (req, res) => {
@@ -34,11 +30,8 @@ app.get("/api/location/:woed", async (req, res) => {
   } catch (e) {
     res.status(404).send();
   }
-  if (response.data) {
     res.status(200).send(response.data);
-  } else {
-    res.status(200).send(null);
-  }
+
 });
 
 if (process.env.NODE_ENV === "production") {
