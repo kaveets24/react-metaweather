@@ -38,13 +38,16 @@ const Weather = props => {
 
     //  Based on temp
     let condition = convertTemp(props.weather[0].the_temp);
-    console.log(condition);
+    let trClassName;
     if (condition < 30) {
       document.body.className = "snow";
+      trClassName = "font-black";
     } else if (condition >= 30 && condition < 60) {
       document.body.className = "cold";
+      trClassName = "font-white";
     } else {
       document.body.className = "warm";
+      trClassName = "font-black";
     }
 
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
@@ -57,7 +60,7 @@ const Weather = props => {
       let currentTemp = convertTemp(weather.the_temp, tempUnit);
 
       return (
-        <tr key={weather.id}>
+        <tr className={trClassName} key={weather.id}>
           <td>
             <img
               alt="weather-icon"

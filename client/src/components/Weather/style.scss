@@ -46,6 +46,8 @@
     @include fadeIn;
     margin-bottom: 100px;
 
+
+
     &--hidden {
       display: none;
     }
@@ -58,16 +60,23 @@
         
       }
     }
+
+
     table {
       border-collapse: collapse;  
       border: $border;
       text-align: center;
       table-layout: fixed;
       width: 100%;
-     
 
-      
-      
+      .font-black {
+        color: $fontBlack !important;
+      }
+      .font-white {
+        color: $fontWhite !important;
+      }
+  
+        
 
       thead {
         font-family: $fontBold;
@@ -79,7 +88,6 @@
       th {
         border-bottom: 0.5px solid $fontBlack;
         padding: 20px 20px;
-        color: $fontBlack;
         
         @media screen and (max-width: $mobileBreakpointMax) {
           padding: 35px 0;
@@ -87,9 +95,9 @@
            
         }
       }
-      td {
-        color: $fontWhite;
-      }
 
     }
+
+
+
   }
