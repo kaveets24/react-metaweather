@@ -38,16 +38,14 @@ const Weather = props => {
 
     //  Based on temp
     let condition = convertTemp(props.weather[0].the_temp);
+    console.log(condition);
     if (condition < 30) {
       document.body.className = "snow";
-    } else if (condition >= 30 || condition < 60) {
+    } else if (condition >= 30 && condition < 60) {
       document.body.className = "cold";
     } else {
       document.body.className = "warm";
     }
-
-
-
 
     let days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     let tableRows = props.weather.map(weather => {
